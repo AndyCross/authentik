@@ -204,6 +204,9 @@
         "@rollup/rollup-linux-x64-gnu": "^4.57.1",
         "chromedriver": "^147.0.4"
     },
+    "workspaces": [
+        "./packages/*"
+    ],
     "wireit": {
         "build": {
             "#comment": [
@@ -295,9 +298,19 @@
         "node": ">=24",
         "npm": ">=11.10.1"
     },
-    "workspaces": [
-        "./packages/*"
-    ],
+    "devEngines": {
+        "runtime": {
+            "name": "node",
+            "onFail": "warn",
+            "version": ">=24"
+        },
+        "packageManager": {
+            "name": "npm",
+            "version": ">=11.10.1",
+            "onFail": "warn"
+        }
+    },
+    "packageManager": "npm@11.13.0+sha512.7119a16a0843580d65160977520e3f5710c974f04afd4fad36d9eb97d917ba716a856c35c78c4be6dc64367eeaccfb957ef5ce997ca31e9330b2e936ba2b1b92",
     "prettier": "@goauthentik/prettier-config",
     "overrides": {
         "@goauthentik/esbuild-plugin-live-reload": {
@@ -336,19 +349,6 @@
         "tree-sitter": false,
         "typescript-eslint": {
             "typescript": "$typescript"
-        }
-    },
-    "packageManager": "npm@11.11.0+sha512.f36811c4aae1fde639527368ae44c571d050006a608d67a191f195a801a52637a312d259186254aa3a3799b05335b7390539cf28656d18f0591a1125ba35f973",
-    "devEngines": {
-        "runtime": {
-            "name": "node",
-            "onFail": "warn",
-            "version": ">=24"
-        },
-        "packageManager": {
-            "name": "npm",
-            "version": ">=11.10.1",
-            "onFail": "warn"
         }
     }
 }
